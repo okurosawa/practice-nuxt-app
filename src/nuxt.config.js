@@ -51,7 +51,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/apollo'
   ],
   /*
    ** Axios module configuration
@@ -76,6 +77,14 @@ export default {
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
         }
+      }
+    }
+  },
+  // Apollo module configuration
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'https://swapi-graphql.netlify.app/.netlify/functions/index/graphql',
       }
     }
   },

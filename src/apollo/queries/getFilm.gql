@@ -1,0 +1,10 @@
+query {
+  characterConnection {
+    characters {
+      name
+      birthYear
+      gender
+      hairColor
+    }
+  }
+}

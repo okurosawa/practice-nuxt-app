@@ -1,0 +1,14 @@
+query {
+  allFilms {
+    pageInfo {
+      hasPreviousPage
+      hasNextPage
+    }
+    films {
+      title
+      episodeID
+      openingCrawl
+      releaseDate
+    }
+  }
+}
