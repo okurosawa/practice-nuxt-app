@@ -1,10 +1,12 @@
-query {
-  characterConnection {
-    characters {
-      name
-      birthYear
-      gender
-      hairColor
+query getFilm($id: String!) {
+  film(id: $id) {
+    characterConnection {
+      characters {
+        name
+        birthYear
+        gender
+        hairColor
+      }
     }
   }
 }

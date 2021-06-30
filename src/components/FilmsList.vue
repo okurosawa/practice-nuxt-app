@@ -6,7 +6,10 @@
         <v-card-subtitle> ReleaseDate: {{ film.releaseDate }} </v-card-subtitle>
         <v-card-text>{{ film.openingCrawl }}</v-card-text>
         <v-card-actions>
-          <v-btn primary block>Details</v-btn>
+          <v-btn primary block @click.stop="filmDialog = true">
+            Detail
+          </v-btn>
+          <film-detail :film-dialog="filmDialog" :film-id="film.id" />
         </v-card-actions>
       </v-card>
     </v-col>
@@ -14,7 +17,12 @@
 </template>
 
 <script>
+import FilmDetail from '~/components/FilmDetail.vue'
+
 export default {
+  components: {
+    FilmDetail
+  },
   props: {
     allFilms: {
       type: Object,
@@ -23,7 +31,13 @@ export default {
   },
   data() {
     return {
-      films: this.allFilms
+      films: this.allFilms,
+      filmDialog: false
+    }
+  },
+  watch: {
+    allFilms() {
+      this.update()
     }
   },
   methods: {

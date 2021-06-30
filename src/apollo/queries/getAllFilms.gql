@@ -5,6 +5,7 @@ query {
       hasNextPage
     }
     films {
+      id
       title
       episodeID
       openingCrawl
